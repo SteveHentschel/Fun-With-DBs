@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWEmployeesModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AdventureWorksDWEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DimEmployees" EntityType="AWEmployeesModel.DimEmployee" />
+    <AssociationSet Name="FK_DimEmployee_DimEmployee" Association="AWEmployeesModel.FK_DimEmployee_DimEmployee">
+      <End Role="DimEmployee" EntitySet="DimEmployees" />
+      <End Role="DimEmployee1" EntitySet="DimEmployees" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DimEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeKey" />
+    </Key>
+    <Property Name="EmployeeKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ParentEmployeeKey" Type="Int32" />
+    <Property Name="EmployeeNationalIDAlternateKey" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="ParentEmployeeNationalIDAlternateKey" Type="String" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="SalesTerritoryKey" Type="Int32" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="NameStyle" Type="Boolean" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="HireDate" Type="DateTime" />
+    <Property Name="BirthDate" Type="DateTime" />
+    <Property Name="LoginID" Type="String" MaxLength="256" Unicode="true" FixedLength="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Phone" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="MaritalStatus" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="EmergencyContactName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="EmergencyContactPhone" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="SalariedFlag" Type="Boolean" />
+    <Property Name="Gender" Type="String" MaxLength="1" Unicode="true" FixedLength="true" />
+    <Property Name="PayFrequency" Type="Byte" />
+    <Property Name="BaseRate" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="VacationHours" Type="Int16" />
+    <Property Name="SickLeaveHours" Type="Int16" />
+    <Property Name="CurrentFlag" Type="Boolean" Nullable="false" />
+    <Property Name="SalesPersonFlag" Type="Boolean" Nullable="false" />
+    <Property Name="DepartmentName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="Status" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="DimEmployee1" Relationship="AWEmployeesModel.FK_DimEmployee_DimEmployee" FromRole="DimEmployee" ToRole="DimEmployee1" />
+    <NavigationProperty Name="DimEmployee2" Relationship="AWEmployeesModel.FK_DimEmployee_DimEmployee" FromRole="DimEmployee1" ToRole="DimEmployee" />
+  </EntityType>
+  <Association Name="FK_DimEmployee_DimEmployee">
+    <End Role="DimEmployee" Type="AWEmployeesModel.DimEmployee" Multiplicity="0..1" />
+    <End Role="DimEmployee1" Type="AWEmployeesModel.DimEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimEmployee">
+        <PropertyRef Name="EmployeeKey" />
+      </Principal>
+      <Dependent Role="DimEmployee1">
+        <PropertyRef Name="ParentEmployeeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

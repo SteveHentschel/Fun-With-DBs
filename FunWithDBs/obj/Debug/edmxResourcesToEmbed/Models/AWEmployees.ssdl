@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWEmployeesModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AWEmployeesModelStoreContainer">
+    <EntitySet Name="DimEmployee" EntityType="AWEmployeesModel.Store.DimEmployee" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DimEmployee_DimEmployee" Association="AWEmployeesModel.Store.FK_DimEmployee_DimEmployee">
+      <End Role="DimEmployee" EntitySet="DimEmployee" />
+      <End Role="DimEmployee1" EntitySet="DimEmployee" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DimEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeKey" />
+    </Key>
+    <Property Name="EmployeeKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ParentEmployeeKey" Type="int" />
+    <Property Name="EmployeeNationalIDAlternateKey" Type="nvarchar" MaxLength="15" />
+    <Property Name="ParentEmployeeNationalIDAlternateKey" Type="nvarchar" MaxLength="15" />
+    <Property Name="SalesTerritoryKey" Type="int" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameStyle" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="HireDate" Type="datetime" />
+    <Property Name="BirthDate" Type="datetime" />
+    <Property Name="LoginID" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="25" />
+    <Property Name="MaritalStatus" Type="nchar" MaxLength="1" />
+    <Property Name="EmergencyContactName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmergencyContactPhone" Type="nvarchar" MaxLength="25" />
+    <Property Name="SalariedFlag" Type="bit" />
+    <Property Name="Gender" Type="nchar" MaxLength="1" />
+    <Property Name="PayFrequency" Type="tinyint" />
+    <Property Name="BaseRate" Type="money" />
+    <Property Name="VacationHours" Type="smallint" />
+    <Property Name="SickLeaveHours" Type="smallint" />
+    <Property Name="CurrentFlag" Type="bit" Nullable="false" />
+    <Property Name="SalesPersonFlag" Type="bit" Nullable="false" />
+    <Property Name="DepartmentName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_DimEmployee_DimEmployee">
+    <End Role="DimEmployee" Type="AWEmployeesModel.Store.DimEmployee" Multiplicity="0..1" />
+    <End Role="DimEmployee1" Type="AWEmployeesModel.Store.DimEmployee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimEmployee">
+        <PropertyRef Name="EmployeeKey" />
+      </Principal>
+      <Dependent Role="DimEmployee1">
+        <PropertyRef Name="ParentEmployeeKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

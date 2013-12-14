@@ -1,0 +1,7 @@
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\bin\FunWithDBs.dll
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\bin\FunWithDBs.pdb
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\bin\EntityFramework.dll
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\bin\EntityFramework.xml
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\obj\Debug\ResolveAssemblyReference.cache
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\obj\Debug\FunWithDBs.dll
+c:\documents and settings\all\my documents\visual studio 2010\Projects\FunWithDBs\FunWithDBs\obj\Debug\FunWithDBs.pdb

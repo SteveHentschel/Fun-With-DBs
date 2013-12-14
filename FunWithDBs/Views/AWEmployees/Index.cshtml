@@ -1,0 +1,87 @@
+﻿@model IEnumerable<FunWithDBs.Models.DimEmployee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            EmployeeKey
+        </th>
+        
+        <th>
+            FirstName
+        </th>
+        <th>
+            LastName
+        </th>
+        
+        <th>
+            Title
+        </th>
+        <th>
+            HireDate
+        </th>
+        
+        <th>
+            BaseRate
+        </th>
+        
+        <th>
+            CurrentFlag
+        </th>
+        
+        <th>
+            DepartmentName
+        </th>
+        
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeKey)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HireDate)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.BaseRate)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrentFlag)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.DepartmentName)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.EmployeeKey }) |
+            @Html.ActionLink("Details", "Details", new { id = item.EmployeeKey }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.EmployeeKey })
+        </td>
+    </tr>
+}
+
+</table>
