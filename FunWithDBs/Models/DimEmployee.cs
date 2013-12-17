@@ -9,6 +9,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace FunWithDBs.Models
 {
@@ -29,6 +30,7 @@ namespace FunWithDBs.Models
         public string MiddleName { get; set; }
         public bool NameStyle { get; set; }
         public string Title { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> HireDate { get; set; }
         public Nullable<System.DateTime> BirthDate { get; set; }
         public string LoginID { get; set; }
