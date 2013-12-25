@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWProducts.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="AWProductsStoreContainer">
+    <EntitySet Name="DimProduct" EntityType="AWProducts.Store.DimProduct" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="DimProduct">
+    <Key>
+      <PropertyRef Name="ProductKey" />
+    </Key>
+    <Property Name="ProductKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductAlternateKey" Type="nvarchar" MaxLength="25" />
+    <Property Name="ProductSubcategoryKey" Type="int" />
+    <Property Name="WeightUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="SizeUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="EnglishProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StandardCost" Type="money" />
+    <Property Name="FinishedGoodsFlag" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="SafetyStockLevel" Type="smallint" />
+    <Property Name="ReorderPoint" Type="smallint" />
+    <Property Name="ListPrice" Type="money" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+    <Property Name="SizeRange" Type="nvarchar" MaxLength="50" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="DaysToManufacture" Type="int" />
+    <Property Name="ProductLine" Type="nchar" MaxLength="2" />
+    <Property Name="DealerPrice" Type="money" />
+    <Property Name="Class" Type="nchar" MaxLength="2" />
+    <Property Name="Style" Type="nchar" MaxLength="2" />
+    <Property Name="ModelName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LargePhoto" Type="varbinary(max)" />
+    <Property Name="EnglishDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="FrenchDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ChineseDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ArabicDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="HebrewDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ThaiDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="7" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AWProducts" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="AdventureWorksDWEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="DimProduct" EntityType="AWProducts.DimProduct" />
+  </EntityContainer>
+  <EntityType Name="DimProduct">
+    <Key>
+      <PropertyRef Name="ProductKey" />
+    </Key>
+    <Property Name="ProductKey" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductAlternateKey" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="ProductSubcategoryKey" Type="Int32" />
+    <Property Name="WeightUnitMeasureCode" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+    <Property Name="SizeUnitMeasureCode" Type="String" MaxLength="3" Unicode="true" FixedLength="true" />
+    <Property Name="EnglishProductName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SpanishProductName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="FrenchProductName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="StandardCost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FinishedGoodsFlag" Type="Boolean" Nullable="false" />
+    <Property Name="Color" Type="String" Nullable="false" MaxLength="15" Unicode="true" FixedLength="false" />
+    <Property Name="SafetyStockLevel" Type="Int16" />
+    <Property Name="ReorderPoint" Type="Int16" />
+    <Property Name="ListPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Size" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="SizeRange" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="Weight" Type="Double" />
+    <Property Name="DaysToManufacture" Type="Int32" />
+    <Property Name="ProductLine" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+    <Property Name="DealerPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Class" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+    <Property Name="Style" Type="String" MaxLength="2" Unicode="true" FixedLength="true" />
+    <Property Name="ModelName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="LargePhoto" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="EnglishDescription" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="FrenchDescription" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="ChineseDescription" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="ArabicDescription" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="HebrewDescription" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="ThaiDescription" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+    <Property Name="StartDate" Type="DateTime" />
+    <Property Name="EndDate" Type="DateTime" />
+    <Property Name="Status" Type="String" MaxLength="7" Unicode="true" FixedLength="false" />
+  </EntityType>
+</Schema>

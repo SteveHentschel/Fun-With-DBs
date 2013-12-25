@@ -48,7 +48,7 @@ namespace FunWithDBs.Controllers
                 return View("Index", model);
             else
             {
-                if (salGreater == true) model = model.Where(s => s.BaseRate >= salary); // Salary filters
+                if (salGreater) model = model.Where(s => s.BaseRate >= salary);         // Salary filters
                 else model = model.Where(s => s.BaseRate <= salary);
                     return View("Index", model);     
             }

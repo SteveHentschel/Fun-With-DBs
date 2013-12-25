@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="testProduct.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="testProductStoreContainer">
+    <EntitySet Name="DimProduct" EntityType="testProduct.Store.DimProduct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimProductCategory" EntityType="testProduct.Store.DimProductCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="DimProductSubcategory" EntityType="testProduct.Store.DimProductSubcategory" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_DimProduct_DimProductSubcategory" Association="testProduct.Store.FK_DimProduct_DimProductSubcategory">
+      <End Role="DimProductSubcategory" EntitySet="DimProductSubcategory" />
+      <End Role="DimProduct" EntitySet="DimProduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DimProductSubcategory_DimProductCategory" Association="testProduct.Store.FK_DimProductSubcategory_DimProductCategory">
+      <End Role="DimProductCategory" EntitySet="DimProductCategory" />
+      <End Role="DimProductSubcategory" EntitySet="DimProductSubcategory" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="DimProduct">
+    <Key>
+      <PropertyRef Name="ProductKey" />
+    </Key>
+    <Property Name="ProductKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductAlternateKey" Type="nvarchar" MaxLength="25" />
+    <Property Name="ProductSubcategoryKey" Type="int" />
+    <Property Name="WeightUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="SizeUnitMeasureCode" Type="nchar" MaxLength="3" />
+    <Property Name="EnglishProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="StandardCost" Type="money" />
+    <Property Name="FinishedGoodsFlag" Type="bit" Nullable="false" />
+    <Property Name="Color" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="SafetyStockLevel" Type="smallint" />
+    <Property Name="ReorderPoint" Type="smallint" />
+    <Property Name="ListPrice" Type="money" />
+    <Property Name="Size" Type="nvarchar" MaxLength="50" />
+    <Property Name="SizeRange" Type="nvarchar" MaxLength="50" />
+    <Property Name="Weight" Type="float" />
+    <Property Name="DaysToManufacture" Type="int" />
+    <Property Name="ProductLine" Type="nchar" MaxLength="2" />
+    <Property Name="DealerPrice" Type="money" />
+    <Property Name="Class" Type="nchar" MaxLength="2" />
+    <Property Name="Style" Type="nchar" MaxLength="2" />
+    <Property Name="ModelName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LargePhoto" Type="varbinary(max)" />
+    <Property Name="EnglishDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="FrenchDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ChineseDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ArabicDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="HebrewDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="ThaiDescription" Type="nvarchar" MaxLength="400" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="Status" Type="nvarchar" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="DimProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryKey" />
+    </Key>
+    <Property Name="ProductCategoryKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductCategoryAlternateKey" Type="int" />
+    <Property Name="EnglishProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductCategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DimProductSubcategory">
+    <Key>
+      <PropertyRef Name="ProductSubcategoryKey" />
+    </Key>
+    <Property Name="ProductSubcategoryKey" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ProductSubcategoryAlternateKey" Type="int" />
+    <Property Name="EnglishProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="SpanishProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="FrenchProductSubcategoryName" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProductCategoryKey" Type="int" />
+  </EntityType>
+  <Association Name="FK_DimProduct_DimProductSubcategory">
+    <End Role="DimProductSubcategory" Type="testProduct.Store.DimProductSubcategory" Multiplicity="0..1" />
+    <End Role="DimProduct" Type="testProduct.Store.DimProduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProductSubcategory">
+        <PropertyRef Name="ProductSubcategoryKey" />
+      </Principal>
+      <Dependent Role="DimProduct">
+        <PropertyRef Name="ProductSubcategoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DimProductSubcategory_DimProductCategory">
+    <End Role="DimProductCategory" Type="testProduct.Store.DimProductCategory" Multiplicity="0..1" />
+    <End Role="DimProductSubcategory" Type="testProduct.Store.DimProductSubcategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DimProductCategory">
+        <PropertyRef Name="ProductCategoryKey" />
+      </Principal>
+      <Dependent Role="DimProductSubcategory">
+        <PropertyRef Name="ProductCategoryKey" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AWEmployeesController.cs" />
+    <Compile Include="Controllers\AWProductsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -86,8 +87,26 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AWEmployees.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\AWProducts.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWProducts.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AWProducts.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWProducts.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\DimEmployee.cs">
       <DependentUpon>AWEDBContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DimProduct.cs">
+      <DependentUpon>AWProducts.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AWProducts.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AWProducts.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -144,7 +163,9 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -200,6 +221,23 @@
     <Content Include="Views\AWEmployees\Create.cshtml" />
     <Content Include="Views\AWEmployees\Edit.cshtml" />
     <Content Include="Views\AWEmployees\Delete.cshtml" />
+    <EntityDeploy Include="Models\AWProducts.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AWProducts.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Models\AWProducts.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AWProducts.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Models\AWProducts.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AWProducts.cs</LastGenOutput>
+    </None>
+    <Content Include="Views\AWProducts\Index.cshtml" />
+    <Content Include="Views\AWProducts\Details.cshtml" />
+    <Content Include="Views\AWProducts\Create.cshtml" />
+    <Content Include="Views\AWProducts\Edit.cshtml" />
+    <Content Include="Views\AWProducts\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

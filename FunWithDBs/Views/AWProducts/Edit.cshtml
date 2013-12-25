@@ -1,0 +1,281 @@
+﻿@model FunWithDBs.Models.DimProduct
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>DimProduct</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductKey)
+            @Html.ValidationMessageFor(model => model.ProductKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductAlternateKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductAlternateKey)
+            @Html.ValidationMessageFor(model => model.ProductAlternateKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductSubcategoryKey)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductSubcategoryKey)
+            @Html.ValidationMessageFor(model => model.ProductSubcategoryKey)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.WeightUnitMeasureCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.WeightUnitMeasureCode)
+            @Html.ValidationMessageFor(model => model.WeightUnitMeasureCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SizeUnitMeasureCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SizeUnitMeasureCode)
+            @Html.ValidationMessageFor(model => model.SizeUnitMeasureCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EnglishProductName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EnglishProductName)
+            @Html.ValidationMessageFor(model => model.EnglishProductName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SpanishProductName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SpanishProductName)
+            @Html.ValidationMessageFor(model => model.SpanishProductName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FrenchProductName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FrenchProductName)
+            @Html.ValidationMessageFor(model => model.FrenchProductName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StandardCost)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StandardCost)
+            @Html.ValidationMessageFor(model => model.StandardCost)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FinishedGoodsFlag)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FinishedGoodsFlag)
+            @Html.ValidationMessageFor(model => model.FinishedGoodsFlag)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Color)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Color)
+            @Html.ValidationMessageFor(model => model.Color)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SafetyStockLevel)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SafetyStockLevel)
+            @Html.ValidationMessageFor(model => model.SafetyStockLevel)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ReorderPoint)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ReorderPoint)
+            @Html.ValidationMessageFor(model => model.ReorderPoint)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ListPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ListPrice)
+            @Html.ValidationMessageFor(model => model.ListPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Size)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Size)
+            @Html.ValidationMessageFor(model => model.Size)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SizeRange)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SizeRange)
+            @Html.ValidationMessageFor(model => model.SizeRange)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Weight)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Weight)
+            @Html.ValidationMessageFor(model => model.Weight)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DaysToManufacture)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DaysToManufacture)
+            @Html.ValidationMessageFor(model => model.DaysToManufacture)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductLine)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ProductLine)
+            @Html.ValidationMessageFor(model => model.ProductLine)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DealerPrice)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DealerPrice)
+            @Html.ValidationMessageFor(model => model.DealerPrice)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Class)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Class)
+            @Html.ValidationMessageFor(model => model.Class)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Style)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Style)
+            @Html.ValidationMessageFor(model => model.Style)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ModelName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ModelName)
+            @Html.ValidationMessageFor(model => model.ModelName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EnglishDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EnglishDescription)
+            @Html.ValidationMessageFor(model => model.EnglishDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FrenchDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FrenchDescription)
+            @Html.ValidationMessageFor(model => model.FrenchDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChineseDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChineseDescription)
+            @Html.ValidationMessageFor(model => model.ChineseDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ArabicDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ArabicDescription)
+            @Html.ValidationMessageFor(model => model.ArabicDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HebrewDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HebrewDescription)
+            @Html.ValidationMessageFor(model => model.HebrewDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThaiDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThaiDescription)
+            @Html.ValidationMessageFor(model => model.ThaiDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StartDate)
+            @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndDate)
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

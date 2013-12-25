@@ -3,6 +3,10 @@ Fun-With-DBs
 
 Ongoing project with AdventureWorks DB (from MSDN) playing with LINQ, stored procedures, etc (using MVC3).
 
+FwDB Rev 1.2 -- Base (12/25/13)
+- Added Products model and CRUD i/f with dataTables() for the index.
+- Next: Will add some type of filtering based on Subcategory, Cost, or Product Line. slh
+
 FwDB Rev 1.1 -- Base (12/17/13)
 - Add dataTables() from Jovan P for much nicer looking index.
 - Added filter for Department and salary (less or greater than).  Used ViewBag for dropdown.

@@ -1,0 +1,175 @@
+﻿@model FunWithDBs.Models.DimProduct
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>DimProduct</legend>
+
+    <div class="display-label">ProductKey</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductKey)
+    </div>
+
+    <div class="display-label">ProductAlternateKey</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductAlternateKey)
+    </div>
+
+    <div class="display-label">ProductSubcategoryKey</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductSubcategoryKey)
+    </div>
+
+    <div class="display-label">WeightUnitMeasureCode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.WeightUnitMeasureCode)
+    </div>
+
+    <div class="display-label">SizeUnitMeasureCode</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SizeUnitMeasureCode)
+    </div>
+
+    <div class="display-label">EnglishProductName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnglishProductName)
+    </div>
+
+    <div class="display-label">SpanishProductName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SpanishProductName)
+    </div>
+
+    <div class="display-label">FrenchProductName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FrenchProductName)
+    </div>
+
+    <div class="display-label">StandardCost</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StandardCost)
+    </div>
+
+    <div class="display-label">FinishedGoodsFlag</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FinishedGoodsFlag)
+    </div>
+
+    <div class="display-label">Color</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Color)
+    </div>
+
+    <div class="display-label">SafetyStockLevel</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SafetyStockLevel)
+    </div>
+
+    <div class="display-label">ReorderPoint</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ReorderPoint)
+    </div>
+
+    <div class="display-label">ListPrice</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ListPrice)
+    </div>
+
+    <div class="display-label">Size</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Size)
+    </div>
+
+    <div class="display-label">SizeRange</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SizeRange)
+    </div>
+
+    <div class="display-label">Weight</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Weight)
+    </div>
+
+    <div class="display-label">DaysToManufacture</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DaysToManufacture)
+    </div>
+
+    <div class="display-label">ProductLine</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ProductLine)
+    </div>
+
+    <div class="display-label">DealerPrice</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DealerPrice)
+    </div>
+
+    <div class="display-label">Class</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Class)
+    </div>
+
+    <div class="display-label">Style</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Style)
+    </div>
+
+    <div class="display-label">ModelName</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ModelName)
+    </div>
+
+    <div class="display-label">EnglishDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EnglishDescription)
+    </div>
+
+    <div class="display-label">FrenchDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FrenchDescription)
+    </div>
+
+    <div class="display-label">ChineseDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChineseDescription)
+    </div>
+
+    <div class="display-label">ArabicDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ArabicDescription)
+    </div>
+
+    <div class="display-label">HebrewDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HebrewDescription)
+    </div>
+
+    <div class="display-label">ThaiDescription</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ThaiDescription)
+    </div>
+
+    <div class="display-label">StartDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.StartDate)
+    </div>
+
+    <div class="display-label">EndDate</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EndDate)
+    </div>
+
+    <div class="display-label">Status</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Status)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProductKey }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

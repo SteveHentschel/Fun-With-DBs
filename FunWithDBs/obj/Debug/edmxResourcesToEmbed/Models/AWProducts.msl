@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AWProductsStoreContainer" CdmEntityContainer="AdventureWorksDWEntities1">
+    <EntitySetMapping Name="DimProduct">
+      <EntityTypeMapping TypeName="AWProducts.DimProduct">
+        <MappingFragment StoreEntitySet="DimProduct">
+          <ScalarProperty Name="ProductKey" ColumnName="ProductKey" />
+          <ScalarProperty Name="ProductAlternateKey" ColumnName="ProductAlternateKey" />
+          <ScalarProperty Name="ProductSubcategoryKey" ColumnName="ProductSubcategoryKey" />
+          <ScalarProperty Name="WeightUnitMeasureCode" ColumnName="WeightUnitMeasureCode" />
+          <ScalarProperty Name="SizeUnitMeasureCode" ColumnName="SizeUnitMeasureCode" />
+          <ScalarProperty Name="EnglishProductName" ColumnName="EnglishProductName" />
+          <ScalarProperty Name="SpanishProductName" ColumnName="SpanishProductName" />
+          <ScalarProperty Name="FrenchProductName" ColumnName="FrenchProductName" />
+          <ScalarProperty Name="StandardCost" ColumnName="StandardCost" />
+          <ScalarProperty Name="FinishedGoodsFlag" ColumnName="FinishedGoodsFlag" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
+          <ScalarProperty Name="SafetyStockLevel" ColumnName="SafetyStockLevel" />
+          <ScalarProperty Name="ReorderPoint" ColumnName="ReorderPoint" />
+          <ScalarProperty Name="ListPrice" ColumnName="ListPrice" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="SizeRange" ColumnName="SizeRange" />
+          <ScalarProperty Name="Weight" ColumnName="Weight" />
+          <ScalarProperty Name="DaysToManufacture" ColumnName="DaysToManufacture" />
+          <ScalarProperty Name="ProductLine" ColumnName="ProductLine" />
+          <ScalarProperty Name="DealerPrice" ColumnName="DealerPrice" />
+          <ScalarProperty Name="Class" ColumnName="Class" />
+          <ScalarProperty Name="Style" ColumnName="Style" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="LargePhoto" ColumnName="LargePhoto" />
+          <ScalarProperty Name="EnglishDescription" ColumnName="EnglishDescription" />
+          <ScalarProperty Name="FrenchDescription" ColumnName="FrenchDescription" />
+          <ScalarProperty Name="ChineseDescription" ColumnName="ChineseDescription" />
+          <ScalarProperty Name="ArabicDescription" ColumnName="ArabicDescription" />
+          <ScalarProperty Name="HebrewDescription" ColumnName="HebrewDescription" />
+          <ScalarProperty Name="ThaiDescription" ColumnName="ThaiDescription" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
