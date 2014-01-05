@@ -17,8 +17,26 @@
 <h2>Product Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm("Filter","AWProducts",FormMethod.Get)){   
+       <fieldset>  
+       <legend>Filter Products</legend> 
+         <p>by Subcategory Key: @Html.DropDownList("prodSubKey", new List <SelectListItem> (
+            from ps in Model.GroupBy(x => x.ProductSubcategoryKey).Select(y => y.First()).OrderBy(z => z.ProductSubcategoryKey)
+            select new SelectListItem {
+    	            Text = ps.ProductSubcategoryKey.ToString(),
+    	            Value = ps.ProductSubcategoryKey.ToString()}) )
+                    
+            and Product Line: @Html.DropDownList("prodLine", new List <SelectListItem> (
+            from pl in Model.GroupBy(x => x.ProductLine).Select(y => y.First())
+            select new SelectListItem {
+    	            Text = pl.ProductLine,
+    	            Value = pl.ProductLine}) )
+
+         <input type="submit" value="Filter" /></p> 
+       </fieldset>
+     }
 </p>
+
 <table class="display">
   <thead>
     <tr>
@@ -106,3 +124,8 @@
 }
     </tbody>
 </table>
+
+<p>
+    <br />
+    @Html.ActionLink("Create New Product", "Create")
+</p>

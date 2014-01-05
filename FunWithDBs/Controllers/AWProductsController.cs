@@ -20,7 +20,21 @@ namespace FunWithDBs.Controllers
         {
             return View(db.DimProduct.ToList());
         }
+        //
+        // POST/GET: /AWProducts/Filter
+        public ActionResult Filter(int? prodSubKey, string prodLine)
+        {
+            var model = from all in db.DimProduct select all;       // grab all records to display
+            var fModel = model;
 
+            if (prodSubKey != null)                                 //  filter by subcat, if specified
+                fModel = fModel.Where(x => x.ProductSubcategoryKey == prodSubKey);
+
+            if (prodLine != "")                                     //  filter by ProdLine, if specified
+                fModel = fModel.Where(y => y.ProductLine == prodLine);
+
+            return View("Index", fModel);
+        }
         //
         // GET: /AWProducts/Details/5
 

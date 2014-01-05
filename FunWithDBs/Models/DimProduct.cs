@@ -12,41 +12,40 @@ using System.Collections.Generic;
 
 namespace FunWithDBs.Models
 {
-    public partial class DimProduct
-    {
-        public int ProductKey { get; set; }
-        public string ProductAlternateKey { get; set; }
-        public Nullable<int> ProductSubcategoryKey { get; set; }
-        public string WeightUnitMeasureCode { get; set; }
-        public string SizeUnitMeasureCode { get; set; }
-        public string EnglishProductName { get; set; }
-        public string SpanishProductName { get; set; }
-        public string FrenchProductName { get; set; }
-        public Nullable<decimal> StandardCost { get; set; }
-        public bool FinishedGoodsFlag { get; set; }
-        public string Color { get; set; }
-        public Nullable<short> SafetyStockLevel { get; set; }
-        public Nullable<short> ReorderPoint { get; set; }
-        public Nullable<decimal> ListPrice { get; set; }
-        public string Size { get; set; }
-        public string SizeRange { get; set; }
-        public Nullable<double> Weight { get; set; }
-        public Nullable<int> DaysToManufacture { get; set; }
-        public string ProductLine { get; set; }
-        public Nullable<decimal> DealerPrice { get; set; }
-        public string Class { get; set; }
-        public string Style { get; set; }
-        public string ModelName { get; set; }
-        public byte[] LargePhoto { get; set; }
-        public string EnglishDescription { get; set; }
-        public string FrenchDescription { get; set; }
-        public string ChineseDescription { get; set; }
-        public string ArabicDescription { get; set; }
-        public string HebrewDescription { get; set; }
-        public string ThaiDescription { get; set; }
-        public Nullable<System.DateTime> StartDate { get; set; }
-        public Nullable<System.DateTime> EndDate { get; set; }
-        public string Status { get; set; }
-    }
-    
+        public partial class DimProduct
+        {
+            public int ProductKey { get; set; }
+            public string ProductAlternateKey { get; set; }
+            public Nullable<int> ProductSubcategoryKey { get; set; }
+            public string WeightUnitMeasureCode { get; set; }
+            public string SizeUnitMeasureCode { get; set; }
+            public string EnglishProductName { get; set; }
+            public string SpanishProductName { get; set; }
+            public string FrenchProductName { get; set; }
+            public Nullable<decimal> StandardCost { get; set; }
+            public bool FinishedGoodsFlag { get; set; }
+            public string Color { get; set; }
+            public Nullable<short> SafetyStockLevel { get; set; }
+            public Nullable<short> ReorderPoint { get; set; }
+            public Nullable<decimal> ListPrice { get; set; }
+            public string Size { get; set; }
+            public string SizeRange { get; set; }
+            public Nullable<double> Weight { get; set; }
+            public Nullable<int> DaysToManufacture { get; set; }
+            public string ProductLine { get; set; }
+            public Nullable<decimal> DealerPrice { get; set; }
+            public string Class { get; set; }
+            public string Style { get; set; }
+            public string ModelName { get; set; }
+            public byte[] LargePhoto { get; set; }
+            public string EnglishDescription { get; set; }
+            public string FrenchDescription { get; set; }
+            public string ChineseDescription { get; set; }
+            public string ArabicDescription { get; set; }
+            public string HebrewDescription { get; set; }
+            public string ThaiDescription { get; set; }
+            public Nullable<System.DateTime> StartDate { get; set; }
+            public Nullable<System.DateTime> EndDate { get; set; }
+            public string Status { get; set; }
+        }
 }
