@@ -32,7 +32,9 @@
     	            Text = pl.ProductLine,
     	            Value = pl.ProductLine}) )
 
-         <input type="submit" value="Filter" /></p> 
+              Reset @Html.CheckBox("filterReset", false)
+
+         <input type="submit" value="Submit" /></p> 
        </fieldset>
      }
 </p>

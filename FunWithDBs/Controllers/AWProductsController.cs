@@ -22,18 +22,19 @@ namespace FunWithDBs.Controllers
         }
         //
         // POST/GET: /AWProducts/Filter
-        public ActionResult Filter(int? prodSubKey, string prodLine)
+        public ActionResult Filter(int? prodSubKey, string prodLine, bool filterReset)
         {
             var model = from all in db.DimProduct select all;       // grab all records to display
-            var fModel = model;
+
+            if (filterReset) return RedirectToAction("Index");      // Reset back to initial index
 
             if (prodSubKey != null)                                 //  filter by subcat, if specified
-                fModel = fModel.Where(x => x.ProductSubcategoryKey == prodSubKey);
+                model = model.Where(x => x.ProductSubcategoryKey == prodSubKey);
 
             if (prodLine != "")                                     //  filter by ProdLine, if specified
-                fModel = fModel.Where(y => y.ProductLine == prodLine);
+                model = model.Where(y => y.ProductLine == prodLine);
 
-            return View("Index", fModel);
+            return View("Index", model);
         }
         //
         // GET: /AWProducts/Details/5
