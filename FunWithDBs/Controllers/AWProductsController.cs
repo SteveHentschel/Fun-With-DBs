@@ -57,8 +57,8 @@ namespace FunWithDBs.Controllers
         // POST: /AWProducts/Create
 
         [HttpPost]
-        public ActionResult Create(DimProduct dimproduct)
-        {
+        public ActionResult Create(DimProduct dimproduct)       // Need to add AntiForgeryToken for
+        {                                                       //  Create and Edit posts
             if (ModelState.IsValid)
             {
                 db.DimProduct.Add(dimproduct);
